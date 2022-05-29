@@ -14,6 +14,8 @@
 		1C1A147B283F653100B07C26 /* UIKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A147A283F653100B07C26 /* UIKitViewController.swift */; };
 		1C1A147F283F69A000B07C26 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A147E283F69A000B07C26 /* ProjectTableViewCell.swift */; };
 		1C1A148328400E1700B07C26 /* VCLifcycleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A148228400E1700B07C26 /* VCLifcycleVC.swift */; };
+		1C1A148728426DEB00B07C26 /* AnotherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A148628426DEB00B07C26 /* AnotherVC.swift */; };
+		1C1A14892843470C00B07C26 /* PickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A14882843470C00B07C26 /* PickerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		1C1A147A283F653100B07C26 /* UIKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitViewController.swift; sourceTree = "<group>"; };
 		1C1A147E283F69A000B07C26 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		1C1A148228400E1700B07C26 /* VCLifcycleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCLifcycleVC.swift; sourceTree = "<group>"; };
+		1C1A148628426DEB00B07C26 /* AnotherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherVC.swift; sourceTree = "<group>"; };
+		1C1A14882843470C00B07C26 /* PickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 				1C1A147A283F653100B07C26 /* UIKitViewController.swift */,
 				1C1A147E283F69A000B07C26 /* ProjectTableViewCell.swift */,
 				1C1A14852840E75300B07C26 /* (1)ViewControllerLifecycle */,
+				1C1A148A2843471500B07C26 /* UIPickerView */,
 			);
 			path = UIKitBasics;
 			sourceTree = "<group>";
@@ -74,8 +79,17 @@
 			isa = PBXGroup;
 			children = (
 				1C1A148228400E1700B07C26 /* VCLifcycleVC.swift */,
+				1C1A148628426DEB00B07C26 /* AnotherVC.swift */,
 			);
 			path = "(1)ViewControllerLifecycle";
+			sourceTree = "<group>";
+		};
+		1C1A148A2843471500B07C26 /* UIPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				1C1A14882843470C00B07C26 /* PickerVC.swift */,
+			);
+			path = UIPickerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +163,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C1A148328400E1700B07C26 /* VCLifcycleVC.swift in Sources */,
+				1C1A14892843470C00B07C26 /* PickerVC.swift in Sources */,
 				1C1A147F283F69A000B07C26 /* ProjectTableViewCell.swift in Sources */,
+				1C1A148728426DEB00B07C26 /* AnotherVC.swift in Sources */,
 				1C1A1466283F619E00B07C26 /* AppDelegate.swift in Sources */,
 				1C1A1468283F619E00B07C26 /* SceneDelegate.swift in Sources */,
 				1C1A147B283F653100B07C26 /* UIKitViewController.swift in Sources */,
