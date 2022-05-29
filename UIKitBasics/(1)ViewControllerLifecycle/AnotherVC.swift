@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AnotherViewController: UIViewController {
+class AnotherVC: UIViewController {
 
     static let identifier = "AnotherVC"
     
