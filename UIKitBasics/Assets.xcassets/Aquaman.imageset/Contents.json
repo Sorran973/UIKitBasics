@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "big_92313_justice_league_ver40_xlg.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "big_92313_justice_league_ver40_xlg@2x.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "big_92313_justice_league_ver40_xlg@3x.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

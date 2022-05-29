@@ -9,7 +9,12 @@ import UIKit
 
 class UIKitViewController: UITableViewController {
 
-    let projectsList = ["1) VCLifecycle"]
+    enum NavigationState {
+        case project(UIViewController.Type)
+    }
+    
+    var projectList = [NavigationState]()
+    let projectsNameList = ["1) VCLifecycle & Segue", "2) UIPickerView"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,36 +23,29 @@ class UIKitViewController: UITableViewController {
         
         view.backgroundColor = .systemPink
         
+        projectList.append(.project(VCLifcycleVC.self))
+        projectList.append(.project(PickerVC.self))
     }
     
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return projectsList.count
+        return projectList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProjectTableViewCell.identifier, for: indexPath) as! ProjectTableViewCell
-        cell.projectLabel.text = projectsList[indexPath.row]
+        cell.projectLabel.text = projectsNameList[indexPath.row]
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            navigationController?.pushViewController(VCLifcycleVC(), animated: true)
+        let value = projectList[indexPath.row]
+        switch value {
+        case .project(let viewControllerType):
+            navigationController?.pushViewController(viewControllerType.init(), animated: true)
         default:
             fatalError()
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
