@@ -14,11 +14,15 @@ class VCLifcycleVC: UIViewController {
     /**
      Next four methods are called one time in whole ViewController lifecycle
      */
+    
+    /**
+     ----- (1) VC is unloaded in memory -----
+     ----- Initialization way #1 -----
+     ----- all outlets aren't set ------
+     */
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nil, bundle: nil)
-        /**
-         ViewController is unloaded, all outlets aren't set
-         */
+
         print("init")
     }
     
@@ -26,12 +30,13 @@ class VCLifcycleVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    /**
+     ----- Initialization way #2 through Xib or Storyboard file -----
+     ViewController is unloaded in memory, all outlets aren't set
+     */
     override class func awakeFromNib() {
         super.awakeFromNib()
-        /**
-         It is called for elements from Storyboard or Xib file
-         ViewController is unloaded, all outlets aren't set
-         */
+
         print("awakeFromNib")
     }
     
@@ -46,6 +51,11 @@ class VCLifcycleVC: UIViewController {
         print("loadView")
     }
     
+    
+    /**
+     Called after the controller's view is loaded into memory.
+     View frame is not be set (shouldn't use .bounds)
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
@@ -71,20 +81,24 @@ class VCLifcycleVC: UIViewController {
     
     @objc func goToAnotherVC() {
         /**
-         By using "NavigationController.pushViewController" MainView disappear
+         By using "NavigationController.pushViewController" main view disappear
          */
         navigationController?.pushViewController(AnotherVC(), animated: true)
         
         /**
-         By using "present(ViewController)" MainView don't disappear
+         By just using "present(ViewController)" main view doesn't disappear, even if you use "modalPresentationStyle = .fullScreen"
          */
-//        present(AnotherViewController(), animated: true, completion: nil)
+//        let anotherVC = AnotherVC()
+//        anotherVC.modalPresentationStyle = .fullScreen
+//        present(anotherVC, animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         /**
+         
          All view outlets' frames are set and can be used for geometry work without animation
+         Here you can fetch information from the internet such as URL
          */
 //        button.translatesAutoresizingMaskIntoConstraints = false
 //        button.setTitle("Button", for: .normal)
@@ -129,7 +143,7 @@ class VCLifcycleVC: UIViewController {
         super.viewDidAppear(animated)
         /**
          It is called immediately after ViewController pops up on the screen
-         It is used for animation work, for FirstResponder to typing to a UITextView
+         It is used for animation work; for FirstResponder to typing to a UITextView
          */
         print("DidAppear")
     }
@@ -137,28 +151,32 @@ class VCLifcycleVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         /**
-         It can be used for clearing properties (UITextField), stop animation
+         It can be used for clearing properties (UITextField); for stopping animation
          */
         print("WillDisappear")
     }
     
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         /**
-         Almost the same as viewWillDisappear
+         Almost the same as viewWillDisappear, but changing colors of NavigationBar doesn't work
          */
         print("DidDisappear")
     }
     
+    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         /**
          It is called if lack of memory and kills the app
-         Here you can try remove all unused elements and save data
+         Here you can try remove all unused elements or save data
          */
         print("DidReceiveMemoryWarning")
     }
     
+
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         /**

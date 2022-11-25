@@ -7,25 +7,29 @@
 
 import UIKit
 
-class UIKitViewController: UITableViewController {
 
-    enum NavigationState {
-        case project(UIViewController.Type)
-    }
+class UIKitViewController: UITableViewController {
     
-    var projectList = [NavigationState]()
-    let projectsNameList = ["1) VCLifecycle & Segue", "2) UIPickerView"]
+    var projectList = [UIViewController.Type]()
+    let projectsNameList = ["1) VCLifecycle & Segue", "2) UIPickerView", "3) TabBar & NavBar", "4) Gesture Recognizer"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemPink
 
         tableView.register(ProjectTableViewCell.self, forCellReuseIdentifier: ProjectTableViewCell.identifier)
         
-        view.backgroundColor = .systemPink
+        projectList.append(VCLifcycleVC.self)
+        projectList.append(PickerVC.self)
+        projectList.append(TabBarVC.self)
+        projectList.append(GestureRecognizerVC.self)
         
-        projectList.append(.project(VCLifcycleVC.self))
-        projectList.append(.project(PickerVC.self))
+        
+
+
     }
+    
+
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,12 +44,13 @@ class UIKitViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let value = projectList[indexPath.row]
-        switch value {
-        case .project(let viewControllerType):
+        let viewControllerType = projectList[indexPath.row]
+        if viewControllerType == TabBarVC.self {
+            let vc = viewControllerType.init()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
+        } else {
             navigationController?.pushViewController(viewControllerType.init(), animated: true)
-        default:
-            fatalError()
         }
     }
 }

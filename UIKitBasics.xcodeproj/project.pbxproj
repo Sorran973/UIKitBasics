@@ -16,6 +16,14 @@
 		1C1A148328400E1700B07C26 /* VCLifcycleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A148228400E1700B07C26 /* VCLifcycleVC.swift */; };
 		1C1A148728426DEB00B07C26 /* AnotherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A148628426DEB00B07C26 /* AnotherVC.swift */; };
 		1C1A14892843470C00B07C26 /* PickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A14882843470C00B07C26 /* PickerVC.swift */; };
+		1C1A148C2844A9EA00B07C26 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A148B2844A9EA00B07C26 /* TabBarVC.swift */; };
+		1C4B710128473F5600B6AD8F /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B710028473F5600B6AD8F /* ContactsVC.swift */; };
+		1C4B710728475F4200B6AD8F /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B710628475F4200B6AD8F /* ContactCell.swift */; };
+		1C5F9CA72848DA0600DBEE19 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F9CA62848DA0600DBEE19 /* SettingsVC.swift */; };
+		1C5F9CAB28494FF800DBEE19 /* NewContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F9CAA28494FF800DBEE19 /* NewContactVC.swift */; };
+		1C5F9CAD284B59C700DBEE19 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F9CAC284B59C700DBEE19 /* SettingCell.swift */; };
+		1C5F9CCF28522DA200DBEE19 /* GestureRecognizerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F9CCE28522DA200DBEE19 /* GestureRecognizerVC.swift */; };
+		1C5F9CD228564F7200DBEE19 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F9CD128564F7200DBEE19 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +38,14 @@
 		1C1A148228400E1700B07C26 /* VCLifcycleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCLifcycleVC.swift; sourceTree = "<group>"; };
 		1C1A148628426DEB00B07C26 /* AnotherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherVC.swift; sourceTree = "<group>"; };
 		1C1A14882843470C00B07C26 /* PickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerVC.swift; sourceTree = "<group>"; };
+		1C1A148B2844A9EA00B07C26 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		1C4B710028473F5600B6AD8F /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
+		1C4B710628475F4200B6AD8F /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		1C5F9CA62848DA0600DBEE19 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		1C5F9CAA28494FF800DBEE19 /* NewContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactVC.swift; sourceTree = "<group>"; };
+		1C5F9CAC284B59C700DBEE19 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		1C5F9CCE28522DA200DBEE19 /* GestureRecognizerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureRecognizerVC.swift; sourceTree = "<group>"; };
+		1C5F9CD128564F7200DBEE19 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +86,9 @@
 				1C1A147A283F653100B07C26 /* UIKitViewController.swift */,
 				1C1A147E283F69A000B07C26 /* ProjectTableViewCell.swift */,
 				1C1A14852840E75300B07C26 /* (1)ViewControllerLifecycle */,
-				1C1A148A2843471500B07C26 /* UIPickerView */,
+				1C1A148A2843471500B07C26 /* (2)UIPickerView */,
+				1C1A148D2844A9F100B07C26 /* (3)UITabBarController */,
+				1C5F9CD028522DA900DBEE19 /* GestureRecognizer */,
 			);
 			path = UIKitBasics;
 			sourceTree = "<group>";
@@ -84,12 +102,34 @@
 			path = "(1)ViewControllerLifecycle";
 			sourceTree = "<group>";
 		};
-		1C1A148A2843471500B07C26 /* UIPickerView */ = {
+		1C1A148A2843471500B07C26 /* (2)UIPickerView */ = {
 			isa = PBXGroup;
 			children = (
 				1C1A14882843470C00B07C26 /* PickerVC.swift */,
 			);
-			path = UIPickerView;
+			path = "(2)UIPickerView";
+			sourceTree = "<group>";
+		};
+		1C1A148D2844A9F100B07C26 /* (3)UITabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				1C1A148B2844A9EA00B07C26 /* TabBarVC.swift */,
+				1C4B710628475F4200B6AD8F /* ContactCell.swift */,
+				1C4B710028473F5600B6AD8F /* ContactsVC.swift */,
+				1C5F9CAA28494FF800DBEE19 /* NewContactVC.swift */,
+				1C5F9CA62848DA0600DBEE19 /* SettingsVC.swift */,
+				1C5F9CAC284B59C700DBEE19 /* SettingCell.swift */,
+			);
+			path = "(3)UITabBarController";
+			sourceTree = "<group>";
+		};
+		1C5F9CD028522DA900DBEE19 /* GestureRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				1C5F9CCE28522DA200DBEE19 /* GestureRecognizerVC.swift */,
+				1C5F9CD128564F7200DBEE19 /* SecondViewController.swift */,
+			);
+			path = GestureRecognizer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,12 +202,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C5F9CA72848DA0600DBEE19 /* SettingsVC.swift in Sources */,
+				1C5F9CAB28494FF800DBEE19 /* NewContactVC.swift in Sources */,
 				1C1A148328400E1700B07C26 /* VCLifcycleVC.swift in Sources */,
+				1C5F9CD228564F7200DBEE19 /* SecondViewController.swift in Sources */,
 				1C1A14892843470C00B07C26 /* PickerVC.swift in Sources */,
+				1C5F9CAD284B59C700DBEE19 /* SettingCell.swift in Sources */,
 				1C1A147F283F69A000B07C26 /* ProjectTableViewCell.swift in Sources */,
+				1C5F9CCF28522DA200DBEE19 /* GestureRecognizerVC.swift in Sources */,
 				1C1A148728426DEB00B07C26 /* AnotherVC.swift in Sources */,
+				1C4B710728475F4200B6AD8F /* ContactCell.swift in Sources */,
 				1C1A1466283F619E00B07C26 /* AppDelegate.swift in Sources */,
 				1C1A1468283F619E00B07C26 /* SceneDelegate.swift in Sources */,
+				1C4B710128473F5600B6AD8F /* ContactsVC.swift in Sources */,
+				1C1A148C2844A9EA00B07C26 /* TabBarVC.swift in Sources */,
 				1C1A147B283F653100B07C26 /* UIKitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

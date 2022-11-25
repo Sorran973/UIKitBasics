@@ -39,7 +39,7 @@ extension ProjectTableViewCell {
         
         projectLabel.backgroundColor = .yellow
         projectLabel.textColor = .black
-        projectLabel.font = .boldSystemFont(ofSize: 40)
+        projectLabel.font = .boldSystemFont(ofSize: 30)
         projectLabel.textAlignment = .center
     }
 }

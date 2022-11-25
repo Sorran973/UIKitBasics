@@ -9,7 +9,15 @@ import UIKit
 
 class AnotherVC: UIViewController {
 
-    static let identifier = "AnotherVC"
+    let prevButton: UIButton = {
+       let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("PreviousVC", for: .normal)
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.backgroundColor = .green
+        return button
+    }()
+    
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nil, bundle: nil)
@@ -27,6 +35,8 @@ class AnotherVC: UIViewController {
          */
         title = "AnotherViewController"
         view.backgroundColor = .systemBlue
+        
+        //remember change it in "WillDisappear"
         navigationController?.navigationBar.tintColor = .black
         print("loadViewAnotherVC")
     }
@@ -46,10 +56,28 @@ class AnotherVC: UIViewController {
          It is called (one time in whole lifecycle) if ViewController doesn't exist earlier and allocates place in memory for VC
          All outlets are already set and exist, but their frames might not be set (shouldn't use .bounds)
          */
+//    frame: CGRect(x: 0, y: 0, width: 200, height: 150
         print("viewDidLoadAnotherVC")
+        view.addSubview(prevButton)
+        NSLayoutConstraint.activate([
+            prevButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            prevButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            prevButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            prevButton.heightAnchor.constraint(equalToConstant: 200)
+        ])
+        
+        prevButton.addTarget(self, action: #selector(clickPrevButton), for: .touchUpInside)
   
 //        title = "AnotherViewController"
 //        view.backgroundColor = .systemBlue
+    }
+    
+    @objc func clickPrevButton() {
+        /**
+         It works by pairs: "pop" in previousVC and "push" nextVC, the same situation with "dismiss" and "present"
+         */
+        navigationController?.popViewController(animated: true)
+//        dismiss(animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {

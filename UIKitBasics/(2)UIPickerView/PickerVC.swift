@@ -18,13 +18,13 @@ class PickerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        
         view.backgroundColor = .white
         view.addSubview(pickerView)
         view.addSubview(imageView)
-        pickerView.dataSource = self
-        pickerView.delegate = self
         setSubviews()
-        
     }
 }
 
@@ -74,17 +74,14 @@ extension PickerVC: UIPickerViewDelegate {
 extension PickerVC {
     
     func setSubviews() {
+        pickerView.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         setImage(pictureName: marvelHeroesList[0])
         NSLayoutConstraint.activate([
             imageView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 2/3),
             imageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
-        ])
-        
-        pickerView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             pickerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             pickerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             pickerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
